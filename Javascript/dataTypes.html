@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Number Data Type : Can be Integer or Float
+        var a = 10;
+        let b = 20;
+        const c = 30;
+        var d = 10.97;
+        console.log(a , b , c);
+        console.log(typeof d , d);
+
+        //String Data Type
+        let x = 'kolkata' //Enclode within Single quotes
+        console.log(typeof x , x);
+
+        let y = "India" //Enclode within Double quotes
+        console.log(typeof y , y);
+
+        let z = `Welcome to ${x}, ${y}` //Enclode within Backticks
+        console.log(typeof z , z);
+
+        //Template Literals
+        let m = 10;
+        let n = 20;
+        console.log("The addition of ${m} and ${n} is: ${m+n}"); //Here, expression will also be treated as string
+        console.log(`The addition of ${m} and ${n} is: ${m+n}`); //Here, expression will be evaluated
+
+        //Boolean Data Type : true or false
+        console.log(10 == 10);
+        console.log(10 == 20);
+
+        //Null Data Type: Represents intentional absence of any object value
+        let p = null;
+        console.log(typeof p , p); //typeof null will return 'object' due to a bug in javascript
+
+        //Undefined Data Type: A variable that has been declared but not assigned a value
+        let q;
+        console.log(typeof q , q);
+
+        //BigInt Data Type:
+        let j = 10;
+        console.log(typeof j , j); //Number
+        let i = 10n;
+        console.log(typeof i , i); //BigInt : At the time of operation, n is not considered
+
+        //Symbol Data Type: Used to create unique identifiers for objects
+        let sym = Symbol('hii');
+        console.log(typeof sym , sym);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1.Object Constructor
+        let obj = new Object();
+        console.log(typeof obj , obj);
+        //CRUD Operations on Object:
+        //1.INSERT: Syntax to store as Key value pair: objectName.key = value;
+        obj.id = 100;
+        obj.name = 'Raj';
+        console.log(obj);
+
+        //2.GET: Accessing Object Properties
+        console.log(obj.id);
+        console.log(obj['name']); //Alternative Syntax
+
+        //3.UPDATE: Modifying Object Properties
+        obj.id = 200;
+        obj.name = 'Rani';
+        console.log(obj);
+
+        //4.DELETE: Deleting Object Properties
+        //delete(objectName.key);
+        delete(obj.id);
+        console.log(obj);
+
+        //2.Object Literal
+        let sym = Symbol();
+        let a = {
+            sym: 100,
+            name:"Raj"
+
+        };
+        console.log(typeof a , a);
+        a.sym = 200;
+        console.log(a);
+
+        //Date & Time
+        let now = new Date();
+        console.log(now.getDate());
+        console.log(now.getDay()); //0-Sunday,1-Monday,...6-Saturday
+        console.log(now.getFullYear());
+        console.log(now.getMonth()); //0-January,1-February,...11-December
+
+        //Time
+        console.log(now.getHours());
+        console.log(now.getMinutes());
+        console.log(now.getSeconds());
+        console.log(now.getMilliseconds());
+
+        //Math
+        console.log(Math.PI);
+        console.log(Math.sqrt(16));
+        console.log(Math.cbrt(27));
+        console.log(Math.pow(2,3));
+        console.log(Math.ceil(10.1));
+        console.log(Math.floor(10.9));
+        console.log(Math.round(10.5)); //>= 10.5 then round up else round down
+        console.log(Math.min(10,20,5,15));
+        console.log(Math.max(10,20,5,15));
+        
+        //4 Digit Integer OTP
+        console.log(parseInt(Math.random()*10000)); //parseInt to convert float to integer
+    </script>
+</body>
+</html>

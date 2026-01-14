@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Internal Javascript -->
+    <script>
+        //Anonymous Function : Function without a name
+        let sub = function(a , b){
+            console.log(a - b);
+        };
+        sub(20 , 10); 
+
+        //Named Function 
+        function add(){
+            let x = 10;
+            let y = 20;
+            let result = x + y; //Right side expression is evaluated first and then assigned to result
+            console.log(result);
+        }
+        add(); //Execution starts from here in case of functions in JS
+
+        //Function with Parameters
+        function add1(a , b) //Formal Parameters
+        {
+            console.log(a + b);
+        }
+        add1(10 , 20); //Actual Parameters
+
+        //Function with Return Type
+        function add2()
+        {
+            let a = 10;
+            let b = 20;
+            return a + b; //Return statement
+        }
+        console.log(add2());
+
+        //Function with Expression to execute an anonymous function
+        let a = function(){
+            console.log("Function with Expression");
+        }
+        a();
+
+        //Function with Expression to execute a named function
+        let b = function add3(){
+            console.log("Named Function Expression");
+        };
+        b();
+
+        //First Class/First Order Functions: Functions that can be treated like any other variable
+        let c = function add(){
+            console.log("First Class Function");
+        };
+        c();
+
+        //Arrow Functions/Lambda Functions: Shorter syntax for writing functions
+        let d = () => {
+            console.log("Arrow Function");
+            console.log(this); //O/P: Window Object, Global Object in JS, Contains global variables and functions
+        };
+        d();
+
+        //Rules for Arrow Functions
+        //1. If there is only one statement in the function body, we can omit the curly braces
+        let e = () => console.log("Arrow Function without Curly Braces");
+        e();
+        //2. If there are more than one statements, we need to use curly braces
+        let f = () => {
+            console.log("Arrow Function with Curly Braces");
+            console.log("Multiple Statements");
+        };
+        f();
+        //3. If there is only one parameter, we can omit the parentheses
+        let g = x => console.log("Arrow Function with one parameter: " + x);
+        g(10);
+        //4. If there are more than one parameters, we need to use parentheses
+        let h = (x , y) => console.log("Arrow Function with two parameters: ", x ,",", y);
+        h(10 , 20);
+        
+        //Callback Functions: Functions passed as arguments to other functions
+
+        //Here, add6 is a Higher Order Function as it takes another function as an argument
+        function add6(sub3){
+            console.log("I am Higher Order Function");
+            sub3(); //Invoking the callback function
+        }
+        
+        add6(sub3); //Passing function as an argument, do not use parentheses here, as function will get invoked immediately if not passed as an argument
+
+        //Here, sub3 is a Callback Function as it is passed as an argument to another function
+        function sub3(){
+            console.log("I am Callback Function");
+        }
+
+        //Nested Functions: Functions defined inside other functions
+        function A(){
+            console.log("I am Outer Function A");
+            let a = 10; 
+            function B(){
+                console.log("I am Inner Function B inside Outer Function A");
+                let b = 20; 
+                console.log("Value of b in Inner Function B: " + b);
+                //Lexical Scoping : Accessing variables of outer function inside inner function
+                //Closure Property of JS: Function B can access variable 'a' from Closure(A)
+                console.log("Accessing variable a of Outer Function A inside Inner Function B: " + a); 
+            }
+            B(); //Invoking nested function inside the outer function
+            console.log("Value of a in Outer Function A: " + a);
+        }
+        A(); //Invoking outer function
+
+        //IIFE: Immediately Invoked Function Expression to execute anonymous function
+        (function(){
+            console.log("I am IIFE Function")
+        })
+        ();
+
+    </script>
+</body>
+</html>

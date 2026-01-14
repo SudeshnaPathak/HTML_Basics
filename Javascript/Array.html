@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Using object
+        let arr = new Array(100, 200, 300, 400, 500); //Array Constructor
+        console.log(typeof arr , arr);
+
+        // arr[0] = 10;
+        // arr[1] = 20;
+        // arr[2] = 30;
+        // arr[3] = 40;
+        // arr[4] = 50;
+        console.log(arr);   
+
+        //Array Literal
+        let arr1 = [1000, 2000, 3000, 4000];
+        console.log(arr1);
+
+        //Inbuilt Array Methods
+        let arr2 = [10 , 20 , 30 , 40 , 50];
+        arr2.push(60); //Adds element at the end
+        console.log(arr2);
+
+        arr2.unshift(70); //Adds element at the beginning
+        console.log(arr2);
+
+        arr2.push(100 , 200 , 300) ; //Adds multiple elements at the end
+        console.log(arr2);
+        
+        arr2.unshift(400 , 500 , 600); //Adds multiple elements at the beginning
+        console.log(arr2);
+
+        arr2.pop(); //Removes element from the end
+        console.log(arr2);
+
+        arr2.shift(); //Removes element from the beginning
+        console.log(arr2);
+
+        arr2.shift();
+        console.log(arr2);
+
+        let arr3 = [100 , 200 , 300 , 400 , 500];
+
+        //Syntax: arrayName.Slice(startIndex , endIndex), Excludes endIndex
+        console.log(arr3.slice(1 , 3));
+        console.log(arr3.slice(-4 , -1)); //Negative Indexing
+
+        let arr4 = [10 , 20 , 30 , 40 , 50];
+        //Syntax: arrayName.Splice(StartIndex , count , newelements)
+
+        // console.log(arr4.splice(0 , 4)); //Fetches and removes elements from array
+        // console.log(arr4); //O/P: 50
+
+        console.log(arr4.splice(0 , 4 , "hii" , "hello" , "how are you" , "Bye" , "Baby")); //Fetch and remove 4 elements and add 5 new elements dynamically
+        console.log(arr4); 
+
+        let arr5 = ["Salman Khan"];
+        let arr6 = ["Katrina Kaif"];
+        let con = arr5.concat(arr6); //Concatenate two arrays
+        console.log(con);
+
+        let arr7 = [10 , 20 , 30 , 40 , 50];
+        console.log(arr7.reverse()); //Reverses the array
+
+        let str = "Kolkata girls are too cute";
+        let str1 = str.split(" "); //Splits the string into array based on the separator
+        console.log(str1);
+
+        let str2 = str1.join(" "); //Joins the array elements into a string based on the separator
+        console.log(str2);
+
+        let str3 = str2.split(" ").reverse().join(" "); //Chaining of methods
+        console.log(str3);
+        
+        //Syntax : map((element , index , array) => {})   High order function that takes a callback function as an argument which takes 3 parameters and applies it to each element of the array and returns a new array
+        //Returns o/p as an array
+        let arr8 = [1 , 2 , 3 , 4 , 5];
+        let a = arr8.map((element, index , array) => {
+            return("Element: " + element + ", Index: " + index + ", Array: " + array);
+        })
+        console.log(a);
+
+        //Syntax : filter((element , index , array) => {}) 
+        let arr9 = [5, 4, 3, 2, 1];
+        let b = arr9.filter((element) => {
+            return element % 2 == 0; //Returns even numbers
+        })
+        console.log(b);
+
+        //Syntax : reduce((accumulator , element , index , array) => {})
+        let arr10 = [10 , 20 , 30 , 40 , 50];
+        let c = arr10.reduce((element , accumulator , index , array) => {
+            return element + accumulator;
+        });
+        console.log(c); //Sum of all elements
+
+        //forEach : Does not return anything, just executes the function for each element
+        let arr11 = [10 , 20 , 30 , 40 , 50];
+        arr11.forEach((element , index , array) => {
+            console.log("Element: " + element + ", Index: " + index + ", Array: " + array);
+        });
+
+        let arr12 = [10 , 19 , 30 , 18 , 20 , 40];
+        console.log(arr10.sort((x , y) => {return x - y})); //Ascending Order
+        console.log(arr10.sort((x , y) => {return y - x})); //Descending Order
+
+        let arr13 = ["Mango" , "Orange" , "Banana" , "Apple"];
+        console.log(arr13.sort()); //Alphabetical Order 
+
+        let age = [18 , 22 , 30 , 60 , 100 , 120];
+        console.log(age.every((element) => { 
+            return element >= 18
+        })); //Checks if all elements satisfy the condition, performs logical AND operation
+
+
+        console.log(age.some((element) => {
+            return element >= 100
+        })); //Checks if at least one element satisfies the condition, performs logical OR operation
+
+        let arr14 = [10 , 20 , 30 , 40 , 50];
+        console.log(arr14.includes(30)); //Checks if the array includes the specified element, returns true or false
+
+        console.log(arr14.find((element) => {
+            return element > 25
+        })); //Returns the first element that satisfies the condition
+
+        let arr15 = [10 , 20 , 30 , 10 , 40 , 50 , 10];
+        console.log(arr15.indexOf(10)); //Returns the first index of the specified element
+        console.log(arr15.lastIndexOf(10)); //Returns the last index of the specified
+
+    </script>
+</body>
+</html>
